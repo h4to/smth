@@ -1,0 +1,18 @@
+Лесенка
+
+for i in range(int(input())):
+    for j in range(i + 1):
+        print(j + 1, end = "")
+    print()
+
+
+Карточка
+
+n = int(input())
+total = 0
+for i in range(n):
+    total += (i + 1)
+for j in range(n - 1):
+    total -= int(input())
+print(total)
+
