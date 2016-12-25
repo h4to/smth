@@ -1,0 +1,42 @@
+Шоколад
+
+n=int(input()) 
+m=int(input()) 
+k=int(input()) 
+if n*m > k: 
+ if k % n == 0 or k % m == 0: 
+  print('YES') 
+ else: 
+  print('NO') 
+else: 
+ print('NO')
+
+
+Яша
+
+n=int(input())
+m=int(input())
+x=int(input()) 
+y=int(input())
+if(n < m):
+    if(x < y and (x < n-x or n-x < 0) and (x < m-y or m-y<0)):
+        print(x)
+    else:
+            if((y < n-x or n-x < 0)and (y < m-y or m-y<0)):
+                print(y)
+            else:
+                if(n-x < m-y):
+                    print(n-x)
+                else:
+                    print(m-y)
+else:
+                if(x < y and (x < m-x or m-x < 0) and (x < n-y or n-y<0)):
+                    print(x)
+                else:
+                        if((y < m-x or m-x < 0)and (y < n-y or n-y<0)):
+                            print(y)
+                        else:
+                                if(m-x < n-y):
+                                    print(m-x)
+                                else:
+                                        print(n-y)
