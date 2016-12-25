@@ -1,0 +1,29 @@
+Побочная диагональ
+
+n = int(input())
+a = [[0] * n for i in range(n)]
+for i in range(n - 1, -1, -1):
+    for j in range(n - 1, -1, -1):
+        if i + j == n - 1:
+            a[i][j] = 1
+        if i + j > n - 1:
+            a[i][j] = 2
+for i in range(n):
+    for j in range(n):
+        print(a[i][j], end = " ")
+    print()
+
+
+Поменять столбцы
+
+n = int(input().split(' ')[0])
+a = []
+for i in range(n):
+    a.append([int(j) for j in input().split()])
+l, m = map(int, input().split(' '))
+for j in range(len(a)):
+    a[j][l], a[j][m] = a[j][m], a[j][l]
+for i in range(n):
+    for j in range(len(a[0])):
+        print(a[i][j], end = " ")
+    print()
