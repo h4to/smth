@@ -1,0 +1,41 @@
+Максимальное число идущих подряд равных элементов
+
+cnt = 1
+mcnt = 1
+curr = int(input())
+inp = curr
+while inp != 0:
+    inp = int(input())
+    if inp == curr:
+        cnt += 1
+    else:
+	    if mcnt < cnt:
+	        mcnt = cnt
+	    curr = inp
+	    cnt = 1
+else:
+    if mcnt < cnt:
+	    mcnt = cnt
+print(mcnt)
+
+
+Стандартное отклонение
+
+from math import *
+
+all = []
+inp = int(input())
+while inp != 0:
+    all.append(inp)
+    inp = int(input())
+n = len(all)
+s = 0
+for i in range(n):
+    s += all[i]
+s /= n
+ch = 0
+for i in range(n):
+    ch += (all[i] - s) ** 2
+o = sqrt(ch / (n - 1))
+
+print (round(o, 11))
