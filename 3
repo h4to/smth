@@ -1,0 +1,16 @@
+Часы 3
+
+from math import *
+a = float(input())
+b = a*12/360*3600
+print(b//3600)
+print((b - b//3600*3600)//60)
+print(floor((b - b//3600*3600) - (b - b//3600*3600)//60*60))
+
+
+Проценты
+
+p = float(input())
+x = float(input())*100
+y = float(input()) + x
+print(int(y + y*p/100)//100 , int(y + y*p/100) - int(y + y*p/100)//100*100)
