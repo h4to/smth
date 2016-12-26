@@ -1,0 +1,57 @@
+1.Предки и потомки
+
+n = int(input())
+p = {}
+for i in range(n - 1):
+    v, u = input().split()
+    p[v] = u
+k = int(input())
+ans = ""
+for i in range(k):
+    if i != 0:
+        ans += " "
+    v, u = input().split()
+    cur_ans = 0
+    copy_v = v
+    while p.get(copy_v) != None:
+        if copy_v == u:
+            cur_ans = 2
+        copy_v = p[copy_v]
+    if cur_ans == 2 or copy_v == u:
+        ans += "2"
+        continue
+    copy_u = u
+    while p.get(copy_u) != None:
+        if copy_u == v:
+            cur_ans = 1
+        copy_u = p[copy_u]
+    if cur_ans == 1 or copy_u == v:
+        ans += "1"
+        continue
+    ans += "0"
+print (ans)
+
+2.LCA
+
+n = int(input())
+p = {}
+for i in range(n - 1):
+    v, u = input().split()
+    p[v] = u
+k = int(input())
+for i in range(k):
+    v, u = input().split()
+    anc_v = []
+    while p.get(v) != None:
+        anc_v.append(v)
+        v = p[v]
+    anc_v.append(v)
+    anc_u = []
+    while p.get(u) != None:
+        anc_u.append(u)
+        u = p[u]
+    anc_u.append(u)
+    for anc in anc_v:
+        if anc in anc_u:
+            print (anc)
+            break
